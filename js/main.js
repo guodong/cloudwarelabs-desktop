@@ -8,7 +8,7 @@ mws.onmessage = function(msg) {
 
 function run() {
   $(document).keydown(function(objEvent) {
-    if (objEvent.keyCode == 9) {  //tab pressed
+    if (objEvent.keyCode == 9 || objEvent.keyCode == 32) {  //tab pressed
       objEvent.preventDefault(); // stops its action
     }
   });
