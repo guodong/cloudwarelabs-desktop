@@ -18,13 +18,11 @@ function run() {
   } else if (docElm.webkitRequestFullScreen) {
     docElm.webkitRequestFullScreen();
   }
-  mws.onopen = function() {
     mws.send(JSON.stringify({
       seq: 1,
       request: 'runDesktop',
       payload: ''
     }));
-  }
 }
 
 function runClient(port) {
