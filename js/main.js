@@ -1,4 +1,3 @@
-
 var mws = new WebSocket('ws://wsapi.cloudwarehub.com:8081');
 mws.onmessage = function(msg) {
   var data = JSON.parse(msg.data);
@@ -18,15 +17,16 @@ function run() {
   } else if (docElm.webkitRequestFullScreen) {
     docElm.webkitRequestFullScreen();
   }
-    mws.send(JSON.stringify({
-      seq: 1,
-      request: 'runDesktop',
-      payload: ''
-    }));
+  document.body.style.overflow = 'hidden';
+  mws.send(JSON.stringify({
+    seq: 1,
+    request: 'runDesktop',
+    payload: ''
+  }));
 }
 
 function runClient(port) {
-  var ws = new WebSocket('ws://106.75.70.43:'+port);
+  var ws = new WebSocket('ws://106.75.70.43:' + port);
   ws.onerror = function() {
     runClient(port);
   }
